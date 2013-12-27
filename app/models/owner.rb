@@ -3,5 +3,6 @@ class Owner < ActiveRecord::Base
 	validates :last_name,  presence: true
 	validates :email,      presence: true
 	validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
-	has_many :dogs
+	has_many :custodies
+	has_many :dogs, through: :custodies
 end
